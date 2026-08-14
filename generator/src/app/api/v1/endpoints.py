@@ -1,9 +1,9 @@
-from src.app.core.chaos import apply_chaos
-from src.app.core.generator import generate_member_batch
-from src.app.schemas.base_event import BasePensionMemberPayload
+from app.core.chaos import apply_chaos
+from app.core.generator import generate_member_batch
+from app.schemas.base_event import BasePensionMemberPayload
 from fastapi import APIRouter, HTTPException
-from src.app.schemas.generator_request import GeneratorRequest
-from src.app.schemas.generator_response import GeneratorResponse
+from app.schemas.generator_request import GeneratorRequest
+from app.schemas.generator_response import GeneratorResponse
 from http import HTTPStatus
 
 router = APIRouter(prefix="/members", tags=["Member Data Generation"])

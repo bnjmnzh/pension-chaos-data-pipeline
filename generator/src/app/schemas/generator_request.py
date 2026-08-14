@@ -1,7 +1,7 @@
 from typing import Optional
 from pydantic import BaseModel, Field
 
-from src.app.schemas.chaos_config import ChaosConfig
+from app.schemas.chaos_config import ChaosConfig
 
 class GeneratorRequest(BaseModel):
     """Payload to trigger member data generation."""

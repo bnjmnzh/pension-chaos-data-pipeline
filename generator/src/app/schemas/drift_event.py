@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from src.app.schemas.base_event import BasePensionMemberPayload
+from app.schemas.base_event import BasePensionMemberPayload
 
 class DriftColumnAddition(BasePensionMemberPayload):
     schema_version: str = "1.1_drift_added_field"

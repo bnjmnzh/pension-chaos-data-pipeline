@@ -6,7 +6,7 @@ import uuid
 
 from faker import Faker
 
-from src.app.schemas.base_event import MemberStatus, BasePensionMemberPayload
+from app.schemas.base_event import MemberStatus, BasePensionMemberPayload
 
 
 fake = Faker("en_CA")

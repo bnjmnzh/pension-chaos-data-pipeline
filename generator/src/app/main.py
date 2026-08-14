@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from src.app.config import Settings
-from src.app.api.v1.endpoints import router as member_router
+from app.config import Settings
+from app.api.v1.endpoints import router as member_router
 
 app = FastAPI(
     title=Settings.PROJECT_NAME,

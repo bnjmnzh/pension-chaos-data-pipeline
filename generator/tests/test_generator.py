@@ -4,8 +4,8 @@ Unit tests for the synthetic data generator core module.
 """
 
 from datetime import date
-from src.app.schemas.base_event import BasePensionMemberPayload, MemberStatus
-from src.app.core.generator import (
+from app.schemas.base_event import BasePensionMemberPayload, MemberStatus
+from app.core.generator import (
     calculate_service_years,
     generate_birth_hire_dates,
     generate_member_batch,

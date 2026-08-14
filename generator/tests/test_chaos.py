@@ -1,7 +1,7 @@
 import pytest
-from src.app.schemas.base_event import BasePensionMemberPayload
-from src.app.schemas.chaos_config import ChaosConfig
-from src.app.core.chaos import (
+from app.schemas.base_event import BasePensionMemberPayload
+from app.schemas.chaos_config import ChaosConfig
+from app.core.chaos import (
     CRITICAL_KEYS,
     apply_chaos,
     inject_duplicates,

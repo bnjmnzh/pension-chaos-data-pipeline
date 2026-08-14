@@ -2,8 +2,8 @@ from typing import Any, Optional
 import random
 
 
-from src.app.schemas.base_event import BasePensionMemberPayload
-from src.app.schemas.chaos_config import ChaosConfig
+from app.schemas.base_event import BasePensionMemberPayload
+from app.schemas.chaos_config import ChaosConfig
 
 
 CRITICAL_KEYS = {"member_id", "schema_version", "first_name", "last_name"}
