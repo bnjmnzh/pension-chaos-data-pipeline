@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: stg_members
+    columns:
+      - name: member_id
+        description: "The unique identifier for a member"
+        tests:
+          - not_null
+          - unique
+      - name: status
+        description: "The current status of the member"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['ACTIVE', 'DEFERRED', 'RETIRED']
+      - name: salary
+        tests:
+          - not_null:
+              config:
+                where: "status = 'ACTIVE'"
+          - dbt_utils.accepted_range:
+              min_value: 0
+              config:
+                where: "status = 'ACTIVE'"
+          - dbt_utils.accepted_range:
+              max_value: 100000000
+              config:
+                severity: warn
+                where: "status = 'ACTIVE'"
+      - name: date_of_birth
+        tests:
+          - not_null
+      - name: hire_date
+        tests:
+          - not_null
+      - name: first_name
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: last_name
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: batch_id
+        tests:
+          - not_null
+      - name: ingested_at
+        tests:
+          - not_null
