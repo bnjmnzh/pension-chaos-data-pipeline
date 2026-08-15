@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 WITH raw_source AS (
     SELECT 
         id AS raw_id,
@@ -9,12 +11,12 @@ WITH raw_source AS (
 
 extracted AS (
     SELECT
-        (payload->>'member_id')::INT as member_id,
+        payload->>'member_id' as member_id,
         payload->>'first_name' as first_name,
         payload->>'last_name' as last_name,
         REGEXP_REPLACE(COALESCE(
             payload->>'salary',
-            payload->>'earnings'), '[,$]', '', 'g')::NUMERIC(10, 2) as salary,
+            payload->>'earnings'), '[,$]|\.\d+', '', 'g')::INT as salary,
         (payload->>'date_of_birth')::DATE as date_of_birth,
         (payload->>'hire_date')::DATE as hire_date,
         payload->>'status' as status,
