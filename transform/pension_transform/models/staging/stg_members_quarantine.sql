@@ -5,15 +5,9 @@ SELECT
     first_name,
     last_name,
     salary,
-    date_of_birth,
-    hire_date,
     status,
-    service_years,
-    contribution_rate,
-    city,
-    province,
-    schema_version,
     batch_id,
-    ingested_at
+    ingested_at,
+    error_reasons
 FROM {{ ref('int_members_validated') }}
-WHERE NOT is_quarantined
+WHERE is_quarantined
