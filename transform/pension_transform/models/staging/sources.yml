@@ -1,0 +1,6 @@
+sources:
+  - name: raw_data
+    database: pension_platform
+    schema: raw
+    tables:
+      - name: members
